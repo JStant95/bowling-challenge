@@ -39,16 +39,13 @@ describe ('Bowling', function(){
     bowling.bowl(5)
     bowling.bowl(4)
     bowling.bowl(3)
-    bowling._totalScore();
-    expect(bowling.totalScore).toEqual(21)
+    expect(bowling._totalScore()).toEqual(21)
   })
 
   it('Scoring takes strikes into accout', function(){
     bowling.bowl(10)
     bowling.bowl(4)
     bowling.bowl(3)
-    bowling._totalScore();
-    console.log(bowling.scorecard)
-    expect(bowling.totalScore).toEqual(24)
+    expect(bowling._totalScore()).toEqual(24)
   })
 });
