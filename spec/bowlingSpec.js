@@ -15,7 +15,6 @@ describe ('Bowling', function(){
   it('allows user to input each bowl', function(){
     bowling.bowl(5);
     bowling.bowl(3);
-    console.log(bowling.scorecard)
     expect(bowling.scorecard).toEqual([[5, 3]])
   });
 
@@ -47,5 +46,21 @@ describe ('Bowling', function(){
     bowling.bowl(4)
     bowling.bowl(3)
     expect(bowling._totalScore()).toEqual(24)
+  })
+
+  it('Can deal with multiple strikes', function(){
+    bowling.bowl(10)
+    bowling.bowl(10)
+    bowling.bowl(10)
+    bowling.bowl(10)
+    bowling.bowl(10)
+    bowling.bowl(10)
+    bowling.bowl(10)
+    bowling.bowl(10)
+    bowling.bowl(10)
+    bowling.bowl(10)
+    bowling.bowl(10)
+    bowling.bowl(10)
+    expect(bowling._totalScore()).toEqual(300)
   })
 });
