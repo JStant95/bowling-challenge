@@ -64,4 +64,9 @@ $(document).ready(function() {
     bowl.bowl(10);
     updateScore();
   })
+
+  $('#reset').on('click', function(){
+    bowl._reset();
+    $('#score').text(0);
+  })
 })
