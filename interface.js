@@ -5,6 +5,10 @@ $(document).ready(function() {
     $('#score').text(bowl._totalScore());
   }
 
+  if(!bowl._isEndGame()){
+    $("#new-game").hide();
+  }
+
   $('#bowl0').on('click', function(){
     bowl.bowl(0);
     updateScore();
@@ -45,11 +49,6 @@ $(document).ready(function() {
     updateScore();
   })
 
-  $('#bowl7').on('click', function(){
-    bowl.bowl(7);
-    updateScore();
-  })
-
   $('#bowl8').on('click', function(){
     bowl.bowl(8);
     updateScore();
@@ -66,6 +65,11 @@ $(document).ready(function() {
   })
 
   $('#reset').on('click', function(){
+    bowl._reset();
+    $('#score').text(0);
+  })
+
+  $('#new-game').on('click', function(){
     bowl._reset();
     $('#score').text(0);
   })
