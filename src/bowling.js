@@ -8,6 +8,11 @@ class Bowling {
   }
 
   bowl(score){
+    if(this._isEndGame()){
+     console.log("You have no more rolls")
+     return true
+      }
+
     if(score === 10){
         this.scorecard.push([score])
         this._nextFrame();
@@ -59,13 +64,13 @@ class Bowling {
   }
 
   _totalScore(){
-      if(this.frame !== 2 && this._isStrike(this.scorecard[this.frame - 3]) && this._isStrike(this.scorecard[this.frame - 2])){
+      if(this.frame === 1){
+        return this.scorecard[0][0]
+      } else if(this.frame !== 2 && this._isStrike(this.scorecard[this.frame - 3]) && this._isStrike(this.scorecard[this.frame - 2])){
         return this._scoreCalculator(3)
       } else if(this._isStrike(this.scorecard[this.frame - 2])){
-        console.log("why dis no working")
         return this._scoreCalculator(2)
       } else if(this._isSpare(this.scorecard[this.frame - 2])){
-        console.log("why dis no working")
         return this._scoreCalculator(2)
       } else {
         return this._scoreCalculator(0)
