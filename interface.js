@@ -89,6 +89,7 @@ $(document).ready(function() {
     bowl._reset();
     $("#new-game").hide();
     $('#score').text(0);
+    buttonHider();
   })
 
   $('#bowl0').on('click', function(){
@@ -181,5 +182,6 @@ $(document).ready(function() {
     bowl._reset();
     $('#score').text(0);
     $('#scorecard').text("");
+    buttonHider();
   })
 })
